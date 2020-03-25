@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group([
+    'namespace' => 'Api\v1',
+    'as' => 'v1.',
+    'prefix' => 'v1'
+] , function () {
+    Route::post('/register' , 'UserController@register');
+    Route::post('/checkcode' , 'UserController@checkCode');
+    Route::get('/voices' , 'VoiceController@all');
+    Route::get('/voices/{id}' , 'VoiceController@find');
+});

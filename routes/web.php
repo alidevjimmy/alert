@@ -14,10 +14,3 @@ Route::group([
     Route::resource('/voices' , 'VoiceController');
     Route::get('logout' , 'AdminController@logout')->name('logout');
 });
-//Route::get('/test' , function () {
-//   \App\Admin::create([
-//       'email' => 'admin@admin.com',
-//       'password' => \Illuminate\Support\Facades\Hash::make('password')
-//   ]) ;
-//   return 'ok';
-//});
