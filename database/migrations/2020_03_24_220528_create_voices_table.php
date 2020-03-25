@@ -17,8 +17,8 @@ class CreateVoicesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('url');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->on('users')->references('id')->onDelete('cascade');
+            $table->unsignedBigInteger('admin_id');
+            $table->foreign('admin_id')->on('admins')->references('id')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

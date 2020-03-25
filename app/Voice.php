@@ -10,8 +10,8 @@ class Voice extends Model
     use SoftDeletes;
     protected $fillable = ['user_id' , 'name' , 'url'];
 
-    public function user()
+    public function admin()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Admin::class);
     }
 }
