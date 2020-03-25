@@ -10,6 +10,7 @@ Route::group([
     'as' => 'admin.'
 ] , function () {
     Route::get('/' , 'AdminController@index')->name('index');
+    Route::get('/index' , 'AdminController@index')->name('index');
     Route::resource('/voices' , 'VoiceController');
     Route::get('logout' , 'AdminController@logout')->name('logout');
 });

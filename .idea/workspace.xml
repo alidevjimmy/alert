@@ -2,32 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28c61b0d-0a63-4c4c-a563-b73e27530187" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/sb-admin-2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/sb-admin-2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/app.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/components/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/components/sidebar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/voices/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/voices/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/voices/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/errors/404.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/errors/500.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/errors/503.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VoiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Voice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Voice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_24_220528_create_voices_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_24_220528_create_voices_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/voices/1585127161.mpga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/components/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/components/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/components/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/voices/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/voices/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/voices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/voices/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +167,7 @@
       <updated>1585086223160</updated>
       <workItem from="1585086225868" duration="4558000" />
       <workItem from="1585117585051" duration="7813000" />
-      <workItem from="1585126371152" duration="4058000" />
+      <workItem from="1585126371152" duration="9057000" />
     </task>
     <servers />
   </component>
@@ -206,9 +191,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="324" y="56" width="632" height="568" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1585127664203" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1585130304546">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1585134925877">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1585130304546" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1585134925877" />
   </component>
 </project>

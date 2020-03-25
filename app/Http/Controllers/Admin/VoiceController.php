@@ -46,11 +46,11 @@ class VoiceController extends Controller
         $request->file('voice')->move(public_path('voices') , $fileName);
         $insertData = Voice::create([
             'name' => $request->name,
-            'url' => '/voices/'.$fileName
+            'url' => '/voices/'.$fileName,
+            'admin_id' => auth()->guard('admin')->user()->id
         ]);
-        $user = auth()->user();
         if ($insertData) {
-            return redirect('admin.index')->with([
+            return redirect(route('admin.voices.index'))->with([
                 'status' => 'success',
                 'message' => 'آلارم ثبت شد'
             ]);
@@ -82,7 +82,7 @@ class VoiceController extends Controller
      */
     public function edit(Voice $voice)
     {
-        //
+        return view('admin.pages.voices.edit' , compact('voice'));
     }
 
     /**
@@ -90,21 +90,49 @@ class VoiceController extends Controller
      *
      * @param Request $request
      * @param Voice $voice
-     * @return void
+     * @return object
      */
     public function update(Request $request, Voice $voice)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'voice' => 'mimes:mpga'
+        ]);
+        if ($request->file('voice')) {
+            $fileName = time().'.'.$request->file('voice')->extension();
+            $request->file('voice')->move(public_path('voices') , $fileName);
+            $voice['url'] = '/voices/'.$fileName;
+        }
+        $voice->update([
+           'name' => $request->name,
+           'url' => $voice['url']
+        ]);
+        return redirect(route('admin.voices.index'))->with([
+            'status' => 'success',
+            'message' => 'آلارم ویرایش شد'
+        ]);
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param Voice $voice
-     * @return void
+     * @return object
      */
     public function destroy(Voice $voice)
     {
-        //
+        if ($voice->delete()) {
+            return redirect(route('admin.voices.index'))->with([
+                'status' => 'success',
+                'message' => 'آآلارم حذف شد'
+            ]);
+        }
+        else {
+            return back()->with([
+                'status' => 'error',
+                'message' => 'خطایی رخ داده است ، لطفا دوباره تلاش کنید.'
+            ]);
+        }
     }
 }
