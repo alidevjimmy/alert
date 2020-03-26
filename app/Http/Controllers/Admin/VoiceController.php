@@ -125,7 +125,7 @@ class VoiceController extends Controller
         if ($voice->delete()) {
             return redirect(route('admin.voices.index'))->with([
                 'status' => 'success',
-                'message' => 'آآلارم حذف شد'
+                'message' => 'آلارم حذف شد'
             ]);
         }
         else {

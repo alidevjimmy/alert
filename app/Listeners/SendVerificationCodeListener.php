@@ -39,7 +39,7 @@ class SendVerificationCodeListener
             $verification->save();
             $api = new \Kavenegar\KavenegarApi("365A484F724970447A4E52784570574D4C4661434166622B484B556A4A32697132523370717730484354633D");
             $sender = "1000596446";
-            $message = 'کد فعالسازی آلارم: ‌' . $code;
+            $message = 'کد فعالسازی آلارم کنکوری: ‌' . $code;
             $receptor = $event->user['phone'];
             $result = $api->Send($sender, $receptor, $message);
             if ($result) {

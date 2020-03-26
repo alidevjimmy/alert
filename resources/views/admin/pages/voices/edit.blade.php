@@ -1,7 +1,7 @@
 @extends('admin.app')
 @section('title') ویرایش کردن آلارم @endsection
 @section('content')
-    <form style="margin: auto" action="{{ route('admin.voices.update' , $voice->id) }}" enctype="multipart/form-data" method="post">
+    <form style="margin: auto" class="col-md-6" action="{{ route('admin.voices.update' , $voice->id) }}" enctype="multipart/form-data" method="post">
         @csrf
         {{ method_field('PATCH') }}
         <div class="form-group">
@@ -25,6 +25,6 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">ثبت</button>
+        <button type="submit" class="btn btn-primary">ویرایش</button>
     </form>
 @endsection

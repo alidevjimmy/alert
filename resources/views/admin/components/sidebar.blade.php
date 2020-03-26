@@ -25,7 +25,6 @@
     <div class="sidebar-heading">
         Alerts
     </div>
-
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -41,8 +40,26 @@
             </div>
         </div>
     </li>
-
     <hr class="sidebar-divider d-none d-md-block">
+        <div class="sidebar-heading">
+            Notifications
+        </div>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
+               aria-expanded="true" aria-controls="collapse3">
+                <i class="fas fa-ad"></i>
+                <span>نوتیفیکیشن ها</span>
+            </a>
+            <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">مدیریت نوتیفیکیشن ها :</h6>
+                    <a class="collapse-item" href="{{ route('admin.notifications.index') }}">همه نوتیفیکیشن ها</a>
+                    <a class="collapse-item" href="{{ route('admin.notifications.create') }}">اضافه کردن نوتیفیکیشن</a>
+                </div>
+            </div>
+        </li>
+        <hr class="sidebar-divider d-none d-md-block">
 
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

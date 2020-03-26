@@ -27,4 +27,6 @@ Route::group([
     Route::post('/checkcode' , 'UserController@checkCode');
     Route::get('/voices' , 'VoiceController@all');
     Route::get('/voices/{id}' , 'VoiceController@find');
+    Route::get('/notifications' , 'NotificationController@all');
+    Route::get('/notifications/{id}' , 'NotificationController@find');
 });
