@@ -1,0 +1,79 @@
+<?php
+
+namespace App\Console\Commands;
+
+use App\Notification;
+use App\Token;
+use Illuminate\Console\Command;
+
+class SendNotificationCommand extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'notification:send';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'send push notifications to users';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+        $unSendNotifications = Notification::where('send' , false)->get();
+        $tokens = [];
+        foreach (\App\Token::all() as $token) {
+            $tokens[] = $token->token;
+        }
+        foreach ($unSendNotifications as $notification) {
+            $url = 'https://fcm.googleapis.com/fcm/send';
+            $fields = array(
+                'registration_ids' => $tokens,
+                'data' => array(
+                    "body" => $notification->body,
+                    "title" => $notification->title,
+                    'link' => $notification->link
+                )
+            );
+            $fields = json_encode($fields);
+
+            $headers = array(
+                'Authorization: key=' . "AAAADz-MHLI:APA91bEPHiHSksv1RM6SS0cVqthasozs3E_0BLNiFp95viZ4PwYwMNa9mVwNYHksdyOKX5T_w6M9oGnoGCEODoNYu8--D9vuWW27zfp0sQgSG_VULoa95ZBrinmLddwdDLocqQsT8JKQ",
+                'Content-Type: application/json'
+            );
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+
+            $result = curl_exec($ch);
+            curl_close($ch);
+            $notification->update([
+                'send' => true
+            ]);
+            return $result;
+        }
+    }
+}

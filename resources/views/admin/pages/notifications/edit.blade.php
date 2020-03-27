@@ -41,7 +41,9 @@
             </span>
             @enderror
             <br>
-            زمان فعلی : {{ $notification->sendDate }}
+            زمان قبلی : {{ $notification->sendDate }}
+            <br>
+            الان : {{ \Carbon\Carbon::now() }}
             <br>
         </div>
 

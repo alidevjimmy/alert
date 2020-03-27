@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Http;
 
 class SendVerificationCodeListener
 {
@@ -31,18 +32,15 @@ class SendVerificationCodeListener
     public function handle(UserRegister $event)
     {
         try {
-            $code = random_int(1000, 9999);
+            $code = random_int(10000, 99999);
             $verification = new Verification;
             $verification->code = $code;
             $verification->user_id = $event->user['id'];
             $verification->created_at = Carbon::now();
             $verification->save();
-            $api = new \Kavenegar\KavenegarApi("365A484F724970447A4E52784570574D4C4661434166622B484B556A4A32697132523370717730484354633D");
-            $sender = "1000596446";
-            $message = 'کد فعالسازی آلارم کنکوری: ‌' . $code;
             $receptor = $event->user['phone'];
-            $result = $api->Send($sender, $receptor, $message);
-            if ($result) {
+            $send = Http::get('https://api.kavenegar.com/v1/657349706A6542536E544A5742677546465835587471624335793368316C6D6A/verify/lookup.json?receptor='.$receptor.'&token='.$code.'&template=verfyPhone');
+            if ($send->status() >= 200 && $send->status() < 300) {
                 return response()->json([
                     'status' => 'success',
                     'message' => 'کد فعالسازی با موفقیت ارسال شد'

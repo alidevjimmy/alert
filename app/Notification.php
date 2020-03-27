@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Notification extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['sendDate' , 'title' , 'body' , 'link'];
+    protected $fillable = ['sendDate' , 'title' , 'body' , 'link' , 'send'];
 
 }

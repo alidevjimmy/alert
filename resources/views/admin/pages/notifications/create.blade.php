@@ -40,6 +40,7 @@
             </span>
             @enderror
             <br>
+            الان : {{ \Carbon\Carbon::now() }}
         </div>
 
         <button type="submit" class="btn btn-primary">ثبت</button>
