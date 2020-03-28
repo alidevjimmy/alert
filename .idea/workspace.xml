@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="28c61b0d-0a63-4c4c-a563-b73e27530187" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/SendNotificationCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/SendNotificationCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NotificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VoiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/NotificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/VoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/VoiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/components/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/components/sidebar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +196,7 @@
       <workItem from="1585239862983" duration="1610000" />
       <workItem from="1585293819990" duration="10593000" />
       <workItem from="1585328638549" duration="12597000" />
-      <workItem from="1585410564868" duration="1292000" />
+      <workItem from="1585410564868" duration="2022000" />
     </task>
     <servers />
   </component>
@@ -231,10 +226,10 @@
     </state>
     <state x="324" y="56" width="632" height="568" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1585127664203" />
     <state x="324" y="57" width="632" height="576" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1585346695216" />
-    <state x="303" y="1" width="672" height="687" key="search.everywhere.popup" timestamp="1585410953638">
+    <state x="303" y="1" width="672" height="687" key="search.everywhere.popup" timestamp="1585412614272">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1585204504689" />
-    <state x="303" y="1" width="672" height="687" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1585410953638" />
+    <state x="303" y="1" width="672" height="687" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1585412614272" />
   </component>
 </project>
