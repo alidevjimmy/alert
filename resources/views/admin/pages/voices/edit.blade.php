@@ -25,6 +25,19 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">ویرایش</button>
+        <button onclick="uploading()" type="submit" class="btn btn-primary">ویرایش</button>
+        <br>
+        <br>
+        <span id="uploadingtext" class="text-xs font-weight-bold border-left-success p-1 alert-success text-success">در حال آپلود کردم...</span>
     </form>
 @endsection
+@section('script')
+    <script type="text/javascript">
+        let uploadingText = document.getElementById('uploadingtext');
+        uploadingText.style.display = 'none';
+        const uploading = () => {
+            uploadingText.style.display = "inline";
+        }
+    </script>
+@endsection
+
