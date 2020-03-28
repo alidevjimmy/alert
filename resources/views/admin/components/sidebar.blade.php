@@ -27,11 +27,17 @@
     </div>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+        <a class="nav-link collapsed d-none d-md-block" href="{{ route('admin.voices.index')  }}" data-toggle="collapse" data-target="#collapseTwo"
            aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-microphone"></i>
             <span>آلارم ها</span>
         </a>
+        <div class="d-md-none">
+            <a class="nav-link collapsed" href="{{ route('admin.voices.index')  }}">
+                <i class="fas fa-microphone"></i>
+                <span>آلارم ها</span>
+            </a>
+        </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">مدیریت آلارم ها :</h6>
@@ -46,11 +52,17 @@
         </div>
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
+            <a class="nav-link collapsed d-none d-md-block" href="{{ route('admin.notifications.index') }}" data-toggle="collapse" data-target="#collapse3"
                aria-expanded="true" aria-controls="collapse3">
                 <i class="fas fa-ad"></i>
                 <span>نوتیفیکیشن ها</span>
             </a>
+            <div class="d-md-none">
+                <a class="nav-link collapsed" href="{{ route('admin.notifications.index')  }}">
+                    <i class="fas fa-ad"></i>
+                    <span>نوتیفیکیشن</span>
+                </a>
+            </div>
             <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">مدیریت نوتیفیکیشن ها :</h6>

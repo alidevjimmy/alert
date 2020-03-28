@@ -16,7 +16,7 @@ class VoiceController extends Controller
      */
     public function index()
     {
-        $voices = Voice::all();
+        $voices = Voice::latest()->get();
         return view('admin.pages.voices.index' , compact('voices'));
     }
 

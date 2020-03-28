@@ -12,7 +12,7 @@ class VoiceController extends Controller
 {
     public function all()
     {
-        $voices = Voice::paginate(10);
+        $voices = Voice::latest()->paginate(10);
         return VoiceCollection::collection($voices);
     }
 

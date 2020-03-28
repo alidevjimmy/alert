@@ -15,7 +15,7 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        $notifications = Notification::all();
+        $notifications = Notification::latest()->get();
         return view('admin.pages.notifications.index' , compact('notifications'));
     }
 

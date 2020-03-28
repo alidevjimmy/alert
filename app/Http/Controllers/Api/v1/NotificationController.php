@@ -12,7 +12,7 @@ class NotificationController extends Controller
 {
     public function all()
     {
-        $voices = Notification::paginate(10);
+        $voices = Notification::latest()->paginate(10);
         return NotificationCollection::collection($voices);
     }
 

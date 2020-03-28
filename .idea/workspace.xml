@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28c61b0d-0a63-4c4c-a563-b73e27530187" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/firebaseKey.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/alert.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/alert.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/SendVerificationCodeListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/SendVerificationCodeListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/notifications/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/notifications/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/notifications/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/notifications/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/SendNotificationCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/SendNotificationCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NotificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/NotificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/VoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/VoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/components/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/components/sidebar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +201,7 @@
       <workItem from="1585239862983" duration="1610000" />
       <workItem from="1585293819990" duration="10593000" />
       <workItem from="1585328638549" duration="12597000" />
+      <workItem from="1585410564868" duration="1292000" />
     </task>
     <servers />
   </component>
@@ -224,11 +217,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="438" y="139" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1585120621003" />
-    <state x="314" y="167" key="com.intellij.ide.util.TipDialog" timestamp="1585328667152">
+    <state x="314" y="167" key="com.intellij.ide.util.TipDialog" timestamp="1585410577792">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="314" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585198533036" />
-    <state x="314" y="167" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1585328667152" />
+    <state x="314" y="167" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1585410577792" />
     <state x="449" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585329989204">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -238,10 +231,10 @@
     </state>
     <state x="324" y="56" width="632" height="568" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1585127664203" />
     <state x="324" y="57" width="632" height="576" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1585346695216" />
-    <state x="303" y="1" width="672" height="687" key="search.everywhere.popup" timestamp="1585348647030">
+    <state x="303" y="1" width="672" height="687" key="search.everywhere.popup" timestamp="1585410953638">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1585204504689" />
-    <state x="303" y="1" width="672" height="687" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1585348647030" />
+    <state x="303" y="1" width="672" height="687" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1585410953638" />
   </component>
 </project>

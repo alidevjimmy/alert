@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Notification;
 use App\Token;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 
 class SendNotificationCommand extends Command
@@ -39,7 +40,7 @@ class SendNotificationCommand extends Command
      */
     public function handle()
     {
-        $unSendNotifications = Notification::where('send' , false)->get();
+        $unSendNotifications = Notification::where('send' , false)->where('sendDate' < Carbon::now())->get();
         $tokens = [];
         foreach (\App\Token::all() as $token) {
             $tokens[] = $token->token;
