@@ -6,6 +6,7 @@ use App\Events\UserRegister;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Verification;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -30,20 +31,23 @@ class UserController extends Controller
         ]);
         $user = User::where('phone', $request->phone)->latest()->first();
         if ($user) {
-            $code = Verification::where('user_id', $user->id)->where('code', $request->code)->first();
+            $code = Verification::where('user_id', $user->id)->where('code', $request->code)->where('used' , false)->first();
             if ($code) {
-                if ($token = JWTAuth::attempt(['phone' => $user->phone , 'password' => 'password'])) {
+                if ($token = JWTAuth::attempt(['phone' => $user->phone, 'password' => 'password'], ['exp' => Carbon::now()->addYear(3)->timestamp])) {
+                    $code->update([
+                        'used' => true
+                    ]);
                     return response()->json([
-                       'token' => $token
+                        'token' => $token,
                     ]);
                 }
                 return response()->json([
-                   'token' => null
+                    'token' => null
                 ]);
             }
             return response()->json([
                 'status' => 'error',
-                'message' => 'کد تایید نادرست است'
+                'message' => 'کد تایید نادرست است',
             ]);
         }
         return response()->json([
