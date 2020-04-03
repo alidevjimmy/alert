@@ -40,42 +40,44 @@ class SendNotificationCommand extends Command
      */
     public function handle()
     {
-        $unSendNotifications = Notification::where('send' , false)->where('sendDate' ,'<=', Carbon::now())->get();
-        $tokens = [];
-        foreach (\App\Token::all() as $token) {
-            $tokens[] = $token->token;
+        $notification = \App\Notification::where('send' , false)->where('sendDate' ,'<=', \Carbon\Carbon::now())->first();
+        if ($notification) {
+            foreach (\App\Token::get() as $token) {
+                $tokens[] = $token->token;
+            }
+                $url = 'https://fcm.googleapis.com/fcm/send';
+                $fields = array(
+                    'registration_ids' => $tokens,
+                    'notification' => array(
+                        "body" => $notification->body,
+                        "title" => $notification->title,
+                        "icon" => "MyIcon",
+                        'click_action' => $notification->link,
+                        "sound" => "default"
+                    )
+                );
+                $fields = json_encode($fields);
+                $apiKey = 'AAAADz-MHLI:APA91bEPHiHSksv1RM6SS0cVqthasozs3E_0BLNiFp95viZ4PwYwMNa9mVwNYHksdyOKX5T_w6M9oGnoGCEODoNYu8--D9vuWW27zfp0sQgSG_VULoa95ZBrinmLddwdDLocqQsT8JKQ';
+                $headers = array(
+                    'Authorization: key=' . $apiKey,
+                    'Content-Type: application/json'
+                );
+    
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+    
+                $result = curl_exec($ch);
+                curl_close($ch);
+                // $notification->update([
+                //     'send' => true
+                // ]);    
         }
-        foreach ($unSendNotifications as $notification) {
-            $url = 'https://fcm.googleapis.com/fcm/send';
-            $fields = array(
-                'registration_ids' => $tokens,
-                'data' => array(
-                    // "body" => $notification->body,
-                    // "title" => $notification->title,
-                    "message" => $notification->title,
-                    // 'link' => $notification->link
-                )
-            );
-            $fields = json_encode($fields);
-            $apiKey = 'AAAADz-MHLI:APA91bEPHiHSksv1RM6SS0cVqthasozs3E_0BLNiFp95viZ4PwYwMNa9mVwNYHksdyOKX5T_w6M9oGnoGCEODoNYu8--D9vuWW27zfp0sQgSG_VULoa95ZBrinmLddwdDLocqQsT8JKQ';
-            $headers = array(
-                'Authorization: key=' . $apiKey,
-                'Content-Type: application/json'
-            );
-
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
-
-            $result = curl_exec($ch);
-            curl_close($ch);
-            $notification->update([
-                'send' => true
-            ]);
-            return $result;
+        else {
+            return 'notification does not exists';
         }
     }
 }
