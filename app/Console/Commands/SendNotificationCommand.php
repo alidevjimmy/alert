@@ -40,7 +40,7 @@ class SendNotificationCommand extends Command
      */
     public function handle()
     {
-        $unSendNotifications = Notification::where('send' , false)->where('sendDate' < Carbon::now())->get();
+        $unSendNotifications = Notification::where('send' , false)->where('sendDate' ,'<=', Carbon::now())->get();
         $tokens = [];
         foreach (\App\Token::all() as $token) {
             $tokens[] = $token->token;
@@ -50,15 +50,16 @@ class SendNotificationCommand extends Command
             $fields = array(
                 'registration_ids' => $tokens,
                 'data' => array(
-                    "body" => $notification->body,
-                    "title" => $notification->title,
-                    'link' => $notification->link
+                    // "body" => $notification->body,
+                    // "title" => $notification->title,
+                    "message" => $notification->title,
+                    // 'link' => $notification->link
                 )
             );
             $fields = json_encode($fields);
-
+            $apiKey = 'AAAADz-MHLI:APA91bEPHiHSksv1RM6SS0cVqthasozs3E_0BLNiFp95viZ4PwYwMNa9mVwNYHksdyOKX5T_w6M9oGnoGCEODoNYu8--D9vuWW27zfp0sQgSG_VULoa95ZBrinmLddwdDLocqQsT8JKQ';
             $headers = array(
-                'Authorization: key=' . "AAAADz-MHLI:APA91bEPHiHSksv1RM6SS0cVqthasozs3E_0BLNiFp95viZ4PwYwMNa9mVwNYHksdyOKX5T_w6M9oGnoGCEODoNYu8--D9vuWW27zfp0sQgSG_VULoa95ZBrinmLddwdDLocqQsT8JKQ",
+                'Authorization: key=' . $apiKey,
                 'Content-Type: application/json'
             );
 

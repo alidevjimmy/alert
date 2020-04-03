@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="28c61b0d-0a63-4c4c-a563-b73e27530187" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/UserController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +156,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/Php/unittest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../maghaze" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -201,6 +200,7 @@
       <workItem from="1585564466210" duration="48000" />
       <workItem from="1585655892284" duration="36000" />
       <workItem from="1585716581674" duration="1461000" />
+      <workItem from="1585718648361" duration="77000" />
     </task>
     <servers />
   </component>
@@ -212,19 +212,19 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="96" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1585204610168" />
-    <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1585564512468">
+    <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1585718723527">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1585564512468" />
+    <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1585718723527" />
     <state x="438" y="139" key="NewPhpClassDialog" timestamp="1585120621003">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="438" y="139" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1585120621003" />
-    <state x="314" y="167" key="com.intellij.ide.util.TipDialog" timestamp="1585716587469">
+    <state x="314" y="167" key="com.intellij.ide.util.TipDialog" timestamp="1585718649706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="314" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585198533036" />
-    <state x="314" y="167" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1585716587469" />
+    <state x="314" y="167" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1585718649706" />
     <state x="449" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585329989204">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
