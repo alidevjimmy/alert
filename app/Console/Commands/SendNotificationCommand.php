@@ -72,9 +72,9 @@ class SendNotificationCommand extends Command
     
                 $result = curl_exec($ch);
                 curl_close($ch);
-                // $notification->update([
-                //     'send' => true
-                // ]);    
+                $notification->update([
+                    'send' => true
+                ]);    
         }
         else {
             return 'notification does not exists';

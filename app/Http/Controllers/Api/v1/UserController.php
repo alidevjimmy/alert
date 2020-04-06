@@ -33,7 +33,7 @@ class UserController extends Controller
         if ($user) {
             $code = Verification::where('user_id', $user->id)->where('code', $request->code)->where('used' , false)->first();
             if ($code) {
-                if ($token = JWTAuth::attempt(['phone' => $user->phone, 'password' => 'password'], ['exp' => Carbon::now()->addYear(3)->timestamp])) {
+                if ($token = JWTAuth::attempt(['phone' => $user->phone, 'password' => 'password'])) {
                     $code->update([
                         'used' => true
                     ]);
