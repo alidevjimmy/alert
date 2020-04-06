@@ -1,9 +1,21 @@
 @extends('admin.app')
 @section('title') ویرایش کردن نوتیفیکیشن @endsection
+@section('script')
+<script src="{{ asset('/js/jquery.datetimepicker.full.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(() => {
+        $('#datetimepicker').datetimepicker({theme:'dark'});
+    }) 
+</script>
+@endsection
+@section('style')
+<link rel="stylesheet" type="text/css" href="{{ asset('/css/jquery.datetimepicker.css') }}" />
+@endsection
 @section('content')
-    <form style="margin: auto" class="col-md-6" action="{{ route('admin.notifications.update' , $notification->id) }}" enctype="multipart/form-data" method="post">
+    <form style="margin: auto" class="col-md-6" action="{{ route('admin.notifications.update' , $notification->id) }}" method="post">
+        @method('PATCH')
         @csrf
-        {{ method_field('PATCH') }}
+    
         <div class="form-group">
             <label for="title">عنوان نوتیفیکیشن :</label>
             <input type="text" value="{{ $notification->title }}" name="title" class="form-control @error('title') is-invalid @enderror" id="title"
@@ -33,7 +45,7 @@
             @enderror
             <br>
             <label for="sendDate">زمان ارسال نوتیفیکیشن :</label>
-            <input type="datetime-local" name="sendDate" class="form-control @error('sendDate') is-invalid @enderror" id="sendDate"
+            <input type="text" value="{{ $notification->sendDate }}" name="sendDate" class="form-control @error('sendDate') is-invalid @enderror" id="datetimepicker"
                    placeholder="زمان ارسال نوتیفیکیشن را وارد کنید ...">
             @error('sendDate')
             <span class="invalid-feedback" role="alert">

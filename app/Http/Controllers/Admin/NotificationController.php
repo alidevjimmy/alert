@@ -86,8 +86,9 @@ class NotificationController extends Controller
             'body' => 'required',
             'link' => 'required'
         ]);
-        if (!$request->sendDate) {
-            $validatedData['sendDate'] = $notification->sendDate;
+        $validatedData['sendDate'] = $notification->sendDate;
+        if ($request->sendDate) {
+            $validatedData['sendDate'] = $request->sendDate;
         }
         $notification->update($validatedData);
         return redirect(route('admin.notifications.index'))->with([

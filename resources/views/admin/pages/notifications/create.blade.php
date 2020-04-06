@@ -1,5 +1,16 @@
 @extends('admin.app')
 @section('title') اضافه کردن نوتیفیکیشن @endsection
+@section('script')
+<script src="{{ asset('/js/jquery.datetimepicker.full.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(() => {
+        $('#datetimepicker').datetimepicker({theme:'dark'});
+    }) 
+</script>
+@endsection
+@section('style')
+<link rel="stylesheet" type="text/css" href="{{ asset('/css/jquery.datetimepicker.css') }}" />
+@endsection
 @section('content')
     <form style="margin: auto" class="col-md-6" action="{{ route('admin.notifications.store') }}" method="post">
         @csrf
@@ -32,7 +43,7 @@
             @enderror
             <br>
             <label for="sendDate">زمان ارسال نوتیفیکیشن :</label>
-            <input type="datetime-local" value="{{ old('sendDate') }}" name="sendDate" class="form-control @error('sendDate') is-invalid @enderror" id="sendDate"
+            <input type="text" value="{{ old('sendDate') }}" name="sendDate" class="form-control @error('sendDate') is-invalid @enderror" id="datetimepicker"
                    placeholder="زمان ارسال نوتیفیکیشن را وارد کنید ...">
             @error('sendDate')
             <span class="invalid-feedback" role="alert">
