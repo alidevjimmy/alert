@@ -1,5 +1,5 @@
 @extends('admin.app')
-@section('title') نوتیفیکیشن ها ها @endsection
+@section('title') نوتیفیکیشن ها @endsection
 @section('style')
     <link rel="stylesheet" href="{{ asset('/css/dataTables.bootstrap4.min.css') }}">
 @endsection
@@ -23,7 +23,8 @@
                             <th>عنوان</th>
                             <th>لینک</th>
                             <th>متن</th>
-                            <th>زمان ارسال</th>
+                            <th> زمان ارسال به شمسی</th>
+                            <th>ارسال شد</th>
                             <th>تنضیمات</th>
                         </tr>
                         </thead>
@@ -33,7 +34,8 @@
                             <th>عنوان</th>
                             <th>لیمک</th>
                             <th>متن</th>
-                            <th>زمان ارسال</th>
+                            <th> زمان ارسال به شمسی</th>
+                            <th>ارسال شد</th>
                             <th>تنضیمات</th>
                         </tr>
                         </tfoot>
@@ -46,6 +48,7 @@
                                     <td><a href="{{$notification->link}}">{{$notification->link}}</a></td>
                                     <td>{{ $notification->body }}</td>
                                     <td>{{ $notification->sendDate }}</td>
+                                    <td>{{ $notification->send ? 'بله' : 'خیر' }}</td>
                                     <td>
                                         <div class="btn-group">
                                             <a href="{{ route('admin.notifications.edit' , $notification->id) }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>

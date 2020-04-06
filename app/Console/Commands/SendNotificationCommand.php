@@ -51,8 +51,9 @@ class SendNotificationCommand extends Command
                     'notification' => array(
                         "body" => $notification->body,
                         "title" => $notification->title,
-                        "icon" => "MyIcon",
+                        "icon" => "http://185.97.116.88/images/Asset.png",
                         'click_action' => $notification->link,
+                        'url' => $notification->link,
                         "sound" => "default"
                     )
                 );
