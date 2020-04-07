@@ -52,13 +52,20 @@ class SendNotificationCommand extends Command
                         "body" => $notification->body,
                         "title" => $notification->title,
                         "icon" => "http://185.97.116.88/images/Asset.png",
-                        'click_action' => $notification->link,
-                        'url' => $notification->link,
                         "sound" => "default"
+                    ),
+                    "android" => array(
+                        "ttl"=>"86400s",
+                        "notification" => array(
+                          "click_action"=> $notification->link
+                        )
+                    ),
+                    'data' => array(
+                        'contents' => $notification->link
                     )
                 );
                 $fields = json_encode($fields);
-                $apiKey = 'AAAADz-MHLI:APA91bEPHiHSksv1RM6SS0cVqthasozs3E_0BLNiFp95viZ4PwYwMNa9mVwNYHksdyOKX5T_w6M9oGnoGCEODoNYu8--D9vuWW27zfp0sQgSG_VULoa95ZBrinmLddwdDLocqQsT8JKQ';
+                $apiKey = 'AAAADz-MHLI=>APA91bEPHiHSksv1RM6SS0cVqthasozs3E_0BLNiFp95viZ4PwYwMNa9mVwNYHksdyOKX5T_w6M9oGnoGCEODoNYu8--D9vuWW27zfp0sQgSG_VULoa95ZBrinmLddwdDLocqQsT8JKQ';
                 $headers = array(
                     'Authorization: key=' . $apiKey,
                     'Content-Type: application/json'
